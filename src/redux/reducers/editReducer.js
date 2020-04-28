@@ -1,7 +1,7 @@
-import { SET_COLOR } from '../constants';
+import { SET_COLOR, SET_FONTSIZE, SET_BACKGROUND } from '../constants';
 
-const initialState = [
-  { 
+const initialState = {
+  elements: [{ 
     text: 'Hello world',
     color: '#000',
     fontSize: 20,
@@ -14,18 +14,26 @@ const initialState = [
     fontSize: 24,
     backgroundColor: '#f3f3f3',
     id: '214245353'
-  }
-]
+  }],
+  editableFeatures: ['color', 'background color', 'font size']
+}
 
 const findCurrentElement = (arr, id) => {
   return arr.indexOf(arr.filter(item => item.id === id)[0]);
 }
 
 const editReducer = (state = initialState, action) => {
+  const elements = [...state.elements];
   switch(action.type) {
     case SET_COLOR: 
-      state[findCurrentElement(state, action.id)].color = action.color;
-      return state;
+      elements[findCurrentElement(state.elements, action.id)].color = action.color;
+      return {...state, elements};
+    case SET_FONTSIZE:
+      elements[findCurrentElement(state.elements, action.id)].fontSize = action.size;
+      return {...state, elements};
+    case SET_BACKGROUND:
+      elements[findCurrentElement(state.elements, action.id)].backgroundColor = action.color;
+      return {...state, elements};
     default :
       return state;
   }

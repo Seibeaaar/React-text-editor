@@ -1,4 +1,4 @@
-import { SET_COLOR } from '../constants'
+import { SET_COLOR, SET_FONTSIZE,SET_BACKGROUND } from '../constants'
 
 export const setColor = (color, id) => {
   return {
@@ -7,3 +7,20 @@ export const setColor = (color, id) => {
     id
   }
 }
+
+export const setFontsize = (size, id) => {
+  return {
+    type: SET_FONTSIZE,
+    size,
+    id
+  }
+}
+
+export const setBackground = (color, id) => {
+  return {
+    type: SET_BACKGROUND,
+    color,
+    id
+  }
+}
+

@@ -1,19 +1,21 @@
 import React, { useState } from 'react';
-import InputColor from 'react-input-color';
 import { connect } from 'react-redux';
-import { setColor } from '../../redux/actions'
+import './EditForm.css';
+import NumberElement from './NumberElement';
+import ColorElement from './ColorElement';
 
-const EditForm = ({ active, setColor }) => {
-  const [color, editColor] = useState({});
+const EditForm = ({ active, features }) => {
   return (
-    <form>
-      <InputColor initialValue='#000' onChange={editColor} placement='right' />
-      <button onClick={(e) => {
-        e.preventDefault();
-        setColor(color.hex, active);
-      }}>Set Color</button>
-    </form> 
+    <div className="editForm__container">
+      { features.map(feature => feature.includes('Size') ? <NumberElement content={feature} /> : <ColorElement content={feature} />)}
+    </div> 
   )
 }
 
-export default connect(null, { setColor })(EditForm);
+const mapStateToProps = (state) => {
+  return {
+    features: state.edit.editableFeatures
+  }
+}
+
+export default connect(mapStateToProps, null)(EditForm);
