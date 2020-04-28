@@ -1,8 +1,9 @@
 import { SET_COLOR } from '../constants'
 
-export const setColor = (color) => {
+export const setColor = (color, id) => {
   return {
     type: SET_COLOR,
-    color
+    color,
+    id
   }
 }

@@ -4,14 +4,14 @@ const initialState = [
   { 
     text: 'Hello world',
     color: '#000',
-    fontSize: 12,
+    fontSize: 20,
     backgroundColor: '#fff',
     id: '231342221'
   }, 
   {
     text: 'React',
     color: 'red',
-    fontSize: 14,
+    fontSize: 24,
     backgroundColor: '#f3f3f3',
     id: '214245353'
   }
@@ -24,7 +24,7 @@ const findCurrentElement = (arr, id) => {
 const editReducer = (state = initialState, action) => {
   switch(action.type) {
     case SET_COLOR: 
-      state(findCurrentElement(state, action.id)).color = action.color;
+      state[findCurrentElement(state, action.id)].color = action.color;
       return state;
     default :
       return state;

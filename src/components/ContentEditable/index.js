@@ -1,9 +1,12 @@
 import React from 'react';
 
-const ContentEditable = ({ content }) => {
+const ContentEditable = ({ content, color, fontSize, backgroundColor, active, id }) => {
   return (
     <>
-      <span contentEditable suppressContentEditableWarning={ true }>{content}</span>
+      <span contentEditable suppressContentEditableWarning={ true } 
+      style={{color, fontSize, backgroundColor}} onFocus={() => {
+        active(id);
+      }}>{content}</span>
       <br />
     </>
   )

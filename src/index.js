@@ -6,7 +6,7 @@ import { rootReducer } from './redux/reducers/rootReducer';
 import './index.css';
 import App from './App';
 
-const store = createStore(rootReducer);
+const store = createStore(rootReducer, window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__());
 
 ReactDOM.render(
   <React.StrictMode>
