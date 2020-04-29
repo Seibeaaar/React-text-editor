@@ -6,7 +6,7 @@ const ColorElement = ({ active, content, action }) => {
   return (
     <div className="input__container">
       <InputColor initialValue="#000" placement="right" onChange={editColor} />
-      <button onClick={() => action(color.hex, active)}>{content}</button>
+      <button onClick={() => action(color.hex, active)} className="btn__handler">{content}</button>
     </div>
   )
 }

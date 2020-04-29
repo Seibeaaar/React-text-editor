@@ -11,12 +11,15 @@ const App = ({ content, toJSON }) => {
     setActive(id);
   }
   return (
-    <div className="App">
-      { content.map(item => <ContentEditable 
-      content={item.text} color={item.color} fontSize={item.fontSize} backgroundColor={item.backgroundColor} active={activeHandler} id={item.id}/>) }
-      <EditForm active={active}/>
-      <button onClick={() => toJSON()}>To JSON</button>
-    </div>
+    <>
+      <div className="app__container">
+        { content.map(item => <ContentEditable 
+        content={item.text} color={item.color} fontSize={item.fontSize} backgroundColor={item.backgroundColor} active={activeHandler} id={item.id}/>) }
+        <EditForm active={active}/>
+        
+      </div>
+      <button onClick={() => toJSON()} className="json__btn">To JSON</button>
+    </>
   );
 }
 

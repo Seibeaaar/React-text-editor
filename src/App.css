@@ -1,4 +1,20 @@
-.App {
+.app__container {
   display: flex;
+  width: 50%;
+  margin: auto;
   align-items: flex-start;
+  flex-wrap: wrap;
+}
+
+.json__btn {
+  display: block;
+  margin: auto;
+  margin-top: 45px;
+  border: none;
+  outline: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  background-color: rgb(83, 126, 19);
+  color: #fff;
+  font-weight: bold;
 }

@@ -35,7 +35,10 @@ const editReducer = (state = initialState, action) => {
       elements[findCurrentElement(state.elements, action.id)].backgroundColor = action.color;
       return {...state, elements};
     case TO_JSON:
-      console.log(JSON.stringify(elements));
+      console.log(JSON.stringify(...elements.map(element => {
+        delete element.id;
+        return element;
+      })));
       return state;
     default :
       return state;

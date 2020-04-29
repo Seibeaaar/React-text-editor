@@ -10,3 +10,20 @@
   margin-bottom: 15px;
   justify-content: space-between;
 }
+
+.btn__handler {
+  width: 100px;
+  outline: none;
+  border: none;
+  border-radius: 4px;
+  background-color: cornflowerblue;
+  color: #fff;
+  font-size: 16px;
+  padding: 5px 10px;
+  margin-left: 20px;
+}
+
+.input__number {
+  width: 46px;
+  outline: none;
+}
