@@ -1,5 +1,6 @@
 import { SET_COLOR, SET_FONTSIZE, SET_BACKGROUND, TO_JSON } from '../constants';
 
+// setting initial value of state to pass it in a reducer as a default value
 const initialState = {
   elements: [{ 
     text: 'Hello world',
@@ -18,11 +19,13 @@ const initialState = {
   editableFeatures: ['color', 'background color', 'font size']
 }
 
+// function to easily find the index of element in edit
 const findCurrentElement = (arr, id) => {
   return arr.indexOf(arr.filter(item => item.id === id)[0]);
 }
 
 const editReducer = (state = initialState, action) => {
+  // making a copy of elements from state to avoid direct mutation of state
   const elements = [...state.elements];
   switch(action.type) {
     case SET_COLOR: 
