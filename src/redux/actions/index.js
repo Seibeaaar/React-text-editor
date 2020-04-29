@@ -1,4 +1,4 @@
-import { SET_COLOR, SET_FONTSIZE,SET_BACKGROUND } from '../constants'
+import { SET_COLOR, SET_FONTSIZE,SET_BACKGROUND, TO_JSON } from '../constants'
 
 export const setColor = (color, id) => {
   return {
@@ -21,6 +21,12 @@ export const setBackground = (color, id) => {
     type: SET_BACKGROUND,
     color,
     id
+  }
+}
+
+export const toJSON = () => {
+  return {
+    type: TO_JSON
   }
 }
 

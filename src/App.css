@@ -1,4 +1,4 @@
 .App {
   display: flex;
-  align-self: flex-start;
+  align-items: flex-start;
 }

@@ -1,4 +1,4 @@
-import { SET_COLOR, SET_FONTSIZE, SET_BACKGROUND } from '../constants';
+import { SET_COLOR, SET_FONTSIZE, SET_BACKGROUND, TO_JSON } from '../constants';
 
 const initialState = {
   elements: [{ 
@@ -34,6 +34,9 @@ const editReducer = (state = initialState, action) => {
     case SET_BACKGROUND:
       elements[findCurrentElement(state.elements, action.id)].backgroundColor = action.color;
       return {...state, elements};
+    case TO_JSON:
+      console.log(JSON.stringify(elements));
+      return state;
     default :
       return state;
   }

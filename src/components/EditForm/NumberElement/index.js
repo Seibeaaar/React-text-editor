@@ -1,12 +1,13 @@
 import React, { useState } from 'react';
-import InputNumber from 'react-input-number';
 
-const NumberElement = ({content}) => {
+const NumberElement = ({active, content, action}) => {
   const [size, editSize] = useState(10);
   return (
     <div className="input__container">
-      <InputNumber min={10} max={100} value={size} onChange={editSize}/>
-      <button>{content}</button> 
+      <input type="number" onChange={(e) => {
+        editSize(e.target.value);
+      }} defaultValue={size} min="10" max="100" />
+      <button onClick={() => action(parseInt(size), active)}>{content}</button> 
     </div>
   )
 }
